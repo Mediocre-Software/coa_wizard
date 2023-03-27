@@ -49,7 +49,22 @@ function Show-COA_psf {
 	#----------------------------------------------
 	
 	$form1_Load={
-		
+		Copy-Item -Path "$PSScriptRoot\SCRIPTS" -Destination "$env:USERPROFILE\Desktop\SCRIPTS" -Recurse -Force -ErrorAction Ignore
+		<#
+		$appDir = "$env:APPDATA\coa_wizard"
+		$dirExists = Test-Path -Path "$appDir"
+		If($dirExists -ne $True){
+			(New-Item -Path "$($env:APPDATA)" -Name "coa_wizard" -ItemType "Directory")
+			
+			(Invoke-WebRequest -Uri https://raw.githubusercontent.com/Mediocre-Software/coa_wizard/main/COA_GUI.ps1 -OutFile "$env:APPDATA\coa_wizard\COA_GUI.ps1")
+			(Invoke-WebRequest -Uri https://raw.githubusercontent.com/Mediocre-Software/coa_wizard/main/run.ps1 -OutFile "$env:APPDATA\coa_wizard\run.ps1")
+			(Invoke-WebRequest -Uri https://raw.githubusercontent.com/Mediocre-Software/coa_wizard/main/Windows10HOME.cmd -OutFile "$env:APPDATA\coa_wizard\Windows10HOME.cmd")
+			(Invoke-WebRequest -Uri https://raw.githubusercontent.com/Mediocre-Software/coa_wizard/main/Windows11HOME.cmd -OutFile "$env:APPDATA\coa_wizard\Windows11HOME.cmd")
+			(Invoke-WebRequest -Uri https://raw.githubusercontent.com/Mediocre-Software/coa_wizard/main/Windows10PRO.cmd -OutFile "$env:APPDATA\coa_wizard\Windows10PRO.cmd")
+			(Invoke-WebRequest -Uri https://raw.githubusercontent.com/Mediocre-Software/coa_wizard/main/Windows11PRO.cmd -OutFile "$env:APPDATA\coa_wizard\Windows11PRO.cmd")
+			(Invoke-WebRequest -Uri https://raw.githubusercontent.com/Mediocre-Software/coa_wizard/main/Windows10CIT.cmd -OutFile "$env:APPDATA\coa_wizard\Windows10CIT.cmd")
+			(Invoke-WebRequest -Uri https://raw.githubusercontent.com/Mediocre-Software/coa_wizard/main/Windows11CIT.cmd -OutFile "$env:APPDATA\coa_wizard\Windows11CIT.cmd")
+			#>
 	}
 	
 	$buttonRETURN_Click={
@@ -60,13 +75,13 @@ function Show-COA_psf {
 		If($button10PRO.Text -eq '10 - PRO'){
 			Try {
 				$button10PRO.Text = 'STOP'
-				$startFile = Join-Path -Path $PSScriptRoot -ChildPath "\Scripts\Windows10PRO.cmd"
+				$startFile = "C:\Users\Administrator\Desktop\SCRIPTS\Windows10PRO.cmd"
 				$webserver = New-Object System.Diagnostics.Process
 				$webserver.StartInfo.Arguments = $startFile
 				$webserver.StartInfo.FileName = "powershell.exe"
 				$webserver.StartInfo.Verb = 'RunAs'
 				$webserver.StartInfo.UseShellExecute = $false
-				$webserver.StartInfo.WorkingDirectory = "$PSScriptRoot\Scripts"
+				$webserver.StartInfo.WorkingDirectory = "C:\Users\Administrator\Desktop"
 				$webserver.StartInfo.CreateNoWindow = $true
 				$webserver.SynchronizingObject = $form1
 				$webserver.EnableRaisingEvents = $true
