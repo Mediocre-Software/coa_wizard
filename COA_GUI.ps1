@@ -57,7 +57,7 @@ function Show-COA_psf {
 	}
 	
 	$button10PRO_Click={
-		If($button10PRO.Text -eq '10 - PRO'){
+		If($button10PRO.Text -eq '10-PRO'){
 			Try {
 				$button10PRO.Text = 'STOP'
 				$startFile = "C:\Users\Administrator\Desktop\SCRIPTS\Windows10PRO.cmd"
@@ -98,13 +98,13 @@ function Show-COA_psf {
 				$webserver.CancelOutputRead()
 				$webserver.Kill()
 				$webserver.Dispose()
-				$button10PRO.Text = '10 - PRO'
+				$button10PRO.Text = '10-PRO'
 				
 		}
 	}
 	
 	$button11PRO_Click={
-		If($button11PRO.Text -eq '11 - PRO'){
+		If($button11PRO.Text -eq '11-PRO'){
 			Try {
 				$button11PRO.Text = 'STOP'
 				$startFile = Join-Path -Path $PSScriptRoot -ChildPath "\Scripts\Windows11PRO.cmd"
@@ -145,13 +145,13 @@ function Show-COA_psf {
 				$webserver.CancelOutputRead()
 				$webserver.Kill()
 				$webserver.Dispose()
-				$button11PRO.Text = '11 - PRO'
+				$button11PRO.Text = '11-PRO'
 				
 		}
 	}
 	
 	$button10HOME_Click={
-		If($button10HOME.Text -eq '10 - HOME'){
+		If($button10HOME.Text -eq '10-HOME'){
 			Try {
 				$button10HOME.Text = 'STOP'
 				$startFile = "C:\Users\Administrator\Desktop\SCRIPTS\Windows10HOME.cmd"
@@ -192,13 +192,13 @@ function Show-COA_psf {
 				$webserver.CancelOutputRead()
 				$webserver.Kill()
 				$webserver.Dispose()
-				$button10HOME.Text = '10 - HOME'
+				$button10HOME.Text = '10-HOME'
 				
 		}
 	}
 	
 	$button11HOME_Click={
-		If($button11HOME.Text -eq '11 - HOME'){
+		If($button11HOME.Text -eq '11-HOME'){
 			Try {
 				$button11HOME.Text = 'STOP'
 				$startFile = Join-Path -Path $PSScriptRoot -ChildPath "\Scripts\Windows11HOME.cmd"
@@ -239,13 +239,13 @@ function Show-COA_psf {
 				$webserver.CancelOutputRead()
 				$webserver.Kill()
 				$webserver.Dispose()
-				$button11HOME.Text = '11 - HOME'
+				$button11HOME.Text = '11-HOME'
 				
 		}
 	}
 	
 	$button10CIT_Click={
-		If($button10CIT.Text -eq '10 - CIT'){
+		If($button10CIT.Text -eq '10-CIT'){
 			Try {
 				$button10CIT.Text = 'STOP'
 				$startFile = "C:\Users\Administrator\Desktop\SCRIPTS\Windows10CIT.cmd"
@@ -286,13 +286,13 @@ function Show-COA_psf {
 				$webserver.CancelOutputRead()
 				$webserver.Kill()
 				$webserver.Dispose()
-				$button10CIT.Text = '10 - CIT'
+				$button10CIT.Text = '10-CIT'
 				
 		}
 	}
 	
 	$button11CIT_Click={
-		If($button11CIT.Text -eq '11 - CIT'){
+		If($button11CIT.Text -eq '11-CIT'){
 			Try {
 				$button11CIT.Text = 'STOP'
 				$startFile = Join-Path -Path $PSScriptRoot -ChildPath "\Scripts\Windows11CIT.cmd"
@@ -333,7 +333,7 @@ function Show-COA_psf {
 				$webserver.CancelOutputRead()
 				$webserver.Kill()
 				$webserver.Dispose()
-				$button11CIT.Text = '11 - CIT'
+				$button11CIT.Text = '11-CIT'
 				
 		}
 	}
@@ -3538,7 +3538,7 @@ ZeDfC+zuZywSwP//gTfzT8NM/AP/PGBX2Jnt7suHvwGdf2nM/RE3PAAAAABJRU5ErkJggg==')
 	$button11CIT.Name = 'button11CIT'
 	$button11CIT.Size = '80, 31'
 	$button11CIT.TabIndex = 18
-	$button11CIT.Text = '11 - CIT'
+	$button11CIT.Text = '11-CIT'
 	$button11CIT.UseCompatibleTextRendering = $True
 	$button11CIT.UseMnemonic = $False
 	$button11CIT.UseVisualStyleBackColor = $True
@@ -3606,7 +3606,7 @@ ZeDfC+zuZywSwP//gTfzT8NM/AP/PGBX2Jnt7suHvwGdf2nM/RE3PAAAAABJRU5ErkJggg==')
 	$button10CIT.Name = 'button10CIT'
 	$button10CIT.Size = '80, 31'
 	$button10CIT.TabIndex = 17
-	$button10CIT.Text = '10 - CIT'
+	$button10CIT.Text = '10-CIT'
 	$button10CIT.UseCompatibleTextRendering = $True
 	$button10CIT.UseMnemonic = $False
 	$button10CIT.UseVisualStyleBackColor = $True
@@ -3674,7 +3674,7 @@ ZeDfC+zuZywSwP//gTfzT8NM/AP/PGBX2Jnt7suHvwGdf2nM/RE3PAAAAABJRU5ErkJggg==')
 	$button11HOME.Name = 'button11HOME'
 	$button11HOME.Size = '80, 31'
 	$button11HOME.TabIndex = 16
-	$button11HOME.Text = '11 - HOME'
+	$button11HOME.Text = '11-HOME'
 	$button11HOME.UseCompatibleTextRendering = $True
 	$button11HOME.UseMnemonic = $False
 	$button11HOME.UseVisualStyleBackColor = $True
@@ -3742,7 +3742,7 @@ ZeDfC+zuZywSwP//gTfzT8NM/AP/PGBX2Jnt7suHvwGdf2nM/RE3PAAAAABJRU5ErkJggg==')
 	$button10HOME.Name = 'button10HOME'
 	$button10HOME.Size = '80, 31'
 	$button10HOME.TabIndex = 15
-	$button10HOME.Text = '10 - HOME'
+	$button10HOME.Text = '10-HOME'
 	$button10HOME.UseCompatibleTextRendering = $True
 	$button10HOME.UseMnemonic = $False
 	$button10HOME.UseVisualStyleBackColor = $True
@@ -3810,7 +3810,7 @@ ZeDfC+zuZywSwP//gTfzT8NM/AP/PGBX2Jnt7suHvwGdf2nM/RE3PAAAAABJRU5ErkJggg==')
 	$button11PRO.Name = 'button11PRO'
 	$button11PRO.Size = '80, 31'
 	$button11PRO.TabIndex = 14
-	$button11PRO.Text = '11 - PRO'
+	$button11PRO.Text = '11-PRO'
 	$button11PRO.UseCompatibleTextRendering = $True
 	$button11PRO.UseMnemonic = $False
 	$button11PRO.UseVisualStyleBackColor = $True
@@ -3878,7 +3878,7 @@ ZeDfC+zuZywSwP//gTfzT8NM/AP/PGBX2Jnt7suHvwGdf2nM/RE3PAAAAABJRU5ErkJggg==')
 	$button10PRO.Name = 'button10PRO'
 	$button10PRO.Size = '80, 31'
 	$button10PRO.TabIndex = 13
-	$button10PRO.Text = '10 - PRO'
+	$button10PRO.Text = '10-PRO'
 	$button10PRO.UseCompatibleTextRendering = $True
 	$button10PRO.UseMnemonic = $False
 	$button10PRO.UseVisualStyleBackColor = $True
