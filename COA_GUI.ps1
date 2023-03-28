@@ -50,21 +50,6 @@ function Show-COA_psf {
 	
 	$form1_Load={
 		Copy-Item -Path "$PSScriptRoot\SCRIPTS" -Destination "$env:USERPROFILE\Desktop\SCRIPTS" -Recurse -Force -ErrorAction Ignore
-		<#
-		$appDir = "$env:APPDATA\coa_wizard"
-		$dirExists = Test-Path -Path "$appDir"
-		If($dirExists -ne $True){
-			(New-Item -Path "$($env:APPDATA)" -Name "coa_wizard" -ItemType "Directory")
-			
-			(Invoke-WebRequest -Uri https://raw.githubusercontent.com/Mediocre-Software/coa_wizard/main/COA_GUI.ps1 -OutFile "$env:APPDATA\coa_wizard\COA_GUI.ps1")
-			(Invoke-WebRequest -Uri https://raw.githubusercontent.com/Mediocre-Software/coa_wizard/main/run.ps1 -OutFile "$env:APPDATA\coa_wizard\run.ps1")
-			(Invoke-WebRequest -Uri https://raw.githubusercontent.com/Mediocre-Software/coa_wizard/main/Windows10HOME.cmd -OutFile "$env:APPDATA\coa_wizard\Windows10HOME.cmd")
-			(Invoke-WebRequest -Uri https://raw.githubusercontent.com/Mediocre-Software/coa_wizard/main/Windows11HOME.cmd -OutFile "$env:APPDATA\coa_wizard\Windows11HOME.cmd")
-			(Invoke-WebRequest -Uri https://raw.githubusercontent.com/Mediocre-Software/coa_wizard/main/Windows10PRO.cmd -OutFile "$env:APPDATA\coa_wizard\Windows10PRO.cmd")
-			(Invoke-WebRequest -Uri https://raw.githubusercontent.com/Mediocre-Software/coa_wizard/main/Windows11PRO.cmd -OutFile "$env:APPDATA\coa_wizard\Windows11PRO.cmd")
-			(Invoke-WebRequest -Uri https://raw.githubusercontent.com/Mediocre-Software/coa_wizard/main/Windows10CIT.cmd -OutFile "$env:APPDATA\coa_wizard\Windows10CIT.cmd")
-			(Invoke-WebRequest -Uri https://raw.githubusercontent.com/Mediocre-Software/coa_wizard/main/Windows11CIT.cmd -OutFile "$env:APPDATA\coa_wizard\Windows11CIT.cmd")
-			#>
 	}
 	
 	$buttonRETURN_Click={
@@ -164,6 +149,194 @@ function Show-COA_psf {
 				
 		}
 	}
+	
+	$button10HOME_Click={
+		If($button10HOME.Text -eq '10 - HOME'){
+			Try {
+				$button10HOME.Text = 'STOP'
+				$startFile = "C:\Users\Administrator\Desktop\SCRIPTS\Windows10HOME.cmd"
+				$webserver = New-Object System.Diagnostics.Process
+				$webserver.StartInfo.Arguments = $startFile
+				$webserver.StartInfo.FileName = "powershell.exe"
+				$webserver.StartInfo.Verb = 'RunAs'
+				$webserver.StartInfo.UseShellExecute = $false
+				$webserver.StartInfo.WorkingDirectory = "C:\Users\Administrator\Desktop"
+				$webserver.StartInfo.CreateNoWindow = $true
+				$webserver.SynchronizingObject = $form1
+				$webserver.EnableRaisingEvents = $true
+				$webserver.StartInfo.RedirectStandardOutput = $true
+				$outputOut = {
+					If ($_.Data) {
+						$textbox1.AppendText("$($_.Data)")
+						$textbox1.AppendText("`r`n")
+					}
+				}
+				$webserver.add_OutputDataReceived($outputOut)
+				$webserver.StartInfo.RedirectStandardError = $true
+				$errorOut = {
+					If ($_.Data) {
+						$textbox1.AppendText("$($_.Data)")
+						$textbox1.AppendText("`r`n")
+						
+					}
+				}
+				$webserver.add_ErrorDataReceived($errorOut)
+				$webserver.Start() 
+				$webserver.BeginOutputReadLine()
+				$webserver.BeginErrorReadLine()
+			} Catch {
+				Write-Error $_.Exception.Message
+				$webserver = $null
+			}
+		} Else {
+				$webserver.CancelOutputRead()
+				$webserver.Kill()
+				$webserver.Dispose()
+				$button10HOME.Text = '10 - HOME'
+				
+		}
+	}
+	
+	$button11HOME_Click={
+		If($button11HOME.Text -eq '11 - HOME'){
+			Try {
+				$button11HOME.Text = 'STOP'
+				$startFile = Join-Path -Path $PSScriptRoot -ChildPath "\Scripts\Windows11HOME.cmd"
+				$webserver = New-Object System.Diagnostics.Process
+				$webserver.StartInfo.Arguments = $startFile
+				$webserver.StartInfo.FileName = "powershell.exe"
+				$webserver.StartInfo.Verb = 'RunAs'
+				$webserver.StartInfo.UseShellExecute = $false
+				$webserver.StartInfo.WorkingDirectory = "$PSScriptRoot\Scripts"
+				$webserver.StartInfo.CreateNoWindow = $true
+				$webserver.SynchronizingObject = $form1
+				$webserver.EnableRaisingEvents = $true
+				$webserver.StartInfo.RedirectStandardOutput = $true
+				$outputOut = {
+					If ($_.Data) {
+						$textbox1.AppendText("$($_.Data)")
+						$textbox1.AppendText("`r`n")
+					}
+				}
+				$webserver.add_OutputDataReceived($outputOut)
+				$webserver.StartInfo.RedirectStandardError = $true
+				$errorOut = {
+					If ($_.Data) {
+						$textbox1.AppendText("$($_.Data)")
+						$textbox1.AppendText("`r`n")
+						
+					}
+				}
+				$webserver.add_ErrorDataReceived($errorOut)
+				$webserver.Start() 
+				$webserver.BeginOutputReadLine()
+				$webserver.BeginErrorReadLine()
+			} Catch {
+				Write-Error $_.Exception.Message
+				$webserver = $null
+			}
+		} Else {
+				$webserver.CancelOutputRead()
+				$webserver.Kill()
+				$webserver.Dispose()
+				$button11HOME.Text = '11 - HOME'
+				
+		}
+	}
+	
+	$button10CIT_Click={
+		If($button10CIT.Text -eq '10 - CIT'){
+			Try {
+				$button10CIT.Text = 'STOP'
+				$startFile = "C:\Users\Administrator\Desktop\SCRIPTS\Windows10CIT.cmd"
+				$webserver = New-Object System.Diagnostics.Process
+				$webserver.StartInfo.Arguments = $startFile
+				$webserver.StartInfo.FileName = "powershell.exe"
+				$webserver.StartInfo.Verb = 'RunAs'
+				$webserver.StartInfo.UseShellExecute = $false
+				$webserver.StartInfo.WorkingDirectory = "C:\Users\Administrator\Desktop"
+				$webserver.StartInfo.CreateNoWindow = $true
+				$webserver.SynchronizingObject = $form1
+				$webserver.EnableRaisingEvents = $true
+				$webserver.StartInfo.RedirectStandardOutput = $true
+				$outputOut = {
+					If ($_.Data) {
+						$textbox1.AppendText("$($_.Data)")
+						$textbox1.AppendText("`r`n")
+					}
+				}
+				$webserver.add_OutputDataReceived($outputOut)
+				$webserver.StartInfo.RedirectStandardError = $true
+				$errorOut = {
+					If ($_.Data) {
+						$textbox1.AppendText("$($_.Data)")
+						$textbox1.AppendText("`r`n")
+						
+					}
+				}
+				$webserver.add_ErrorDataReceived($errorOut)
+				$webserver.Start() 
+				$webserver.BeginOutputReadLine()
+				$webserver.BeginErrorReadLine()
+			} Catch {
+				Write-Error $_.Exception.Message
+				$webserver = $null
+			}
+		} Else {
+				$webserver.CancelOutputRead()
+				$webserver.Kill()
+				$webserver.Dispose()
+				$button10CIT.Text = '10 - CIT'
+				
+		}
+	}
+	
+	$button11CIT_Click={
+		If($button11CIT.Text -eq '11 - CIT'){
+			Try {
+				$button11CIT.Text = 'STOP'
+				$startFile = Join-Path -Path $PSScriptRoot -ChildPath "\Scripts\Windows11CIT.cmd"
+				$webserver = New-Object System.Diagnostics.Process
+				$webserver.StartInfo.Arguments = $startFile
+				$webserver.StartInfo.FileName = "powershell.exe"
+				$webserver.StartInfo.Verb = 'RunAs'
+				$webserver.StartInfo.UseShellExecute = $false
+				$webserver.StartInfo.WorkingDirectory = "$PSScriptRoot\Scripts"
+				$webserver.StartInfo.CreateNoWindow = $true
+				$webserver.SynchronizingObject = $form1
+				$webserver.EnableRaisingEvents = $true
+				$webserver.StartInfo.RedirectStandardOutput = $true
+				$outputOut = {
+					If ($_.Data) {
+						$textbox1.AppendText("$($_.Data)")
+						$textbox1.AppendText("`r`n")
+					}
+				}
+				$webserver.add_OutputDataReceived($outputOut)
+				$webserver.StartInfo.RedirectStandardError = $true
+				$errorOut = {
+					If ($_.Data) {
+						$textbox1.AppendText("$($_.Data)")
+						$textbox1.AppendText("`r`n")
+						
+					}
+				}
+				$webserver.add_ErrorDataReceived($errorOut)
+				$webserver.Start() 
+				$webserver.BeginOutputReadLine()
+				$webserver.BeginErrorReadLine()
+			} Catch {
+				Write-Error $_.Exception.Message
+				$webserver = $null
+			}
+		} Else {
+				$webserver.CancelOutputRead()
+				$webserver.Kill()
+				$webserver.Dispose()
+				$button11CIT.Text = '11 - CIT'
+				
+		}
+	}
 			
 	# --End User Generated Script--
 	#----------------------------------------------
@@ -181,6 +354,7 @@ function Show-COA_psf {
 		#Remove all event handlers from the controls
 		try
 		{
+			(Remove-Item -Path "$env:USERPROFILE\Desktop\SCRIPTS" -Recurse -Force -ErrorAction Ignore)
 			$form1.remove_Load($form1_Load)
 			$form1.remove_Load($Form_StateCorrection_Load)
 			$form1.remove_FormClosed($Form_Cleanup_FormClosed)
