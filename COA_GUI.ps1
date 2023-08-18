@@ -31,42 +31,15 @@ public static extern bool ShowWindow(IntPtr hWnd, Int32 nCmdShow);
 $consolePtr = [Console.Window]::GetConsoleWindow()
 [Console.Window]::ShowWindow($consolePtr, 0)
 
+#----------------------------------------------
+#region Application Functions
+#----------------------------------------------
+
 #endregion Application Functions
 
 #----------------------------------------------
 # Generated Form Function
 #----------------------------------------------
-function Show-COA_psf {
-
-	#----------------------------------------------
-	#region Import the Assemblies
-	#----------------------------------------------
-	[void][reflection.assembly]::Load('System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a')
-	[void][reflection.assembly]::Load('System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089')
-	[void][reflection.assembly]::Load('System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089')
-	#endregion Import Assemblies
-
-	#----------------------------------------------
-	#region Generated Form Objects
-	#----------------------------------------------
-	[System.Windows.Forms.Application]::EnableVisualStyles()
-	$form1 = New-Object 'System.Windows.Forms.Form'
-	$buttonRETURN = New-Object 'System.Windows.Forms.Button'
-	$button11CIT = New-Object 'System.Windows.Forms.Button'
-	$button10CIT = New-Object 'System.Windows.Forms.Button'
-	$button11HOME = New-Object 'System.Windows.Forms.Button'
-	$button10HOME = New-Object 'System.Windows.Forms.Button'
-	$button11PRO = New-Object 'System.Windows.Forms.Button'
-	$button10PRO = New-Object 'System.Windows.Forms.Button'
-	$textbox1 = New-Object 'System.Windows.Forms.TextBox'
-	$picturebox1 = New-Object 'System.Windows.Forms.PictureBox'
-	$InitialFormWindowState = New-Object 'System.Windows.Forms.FormWindowState'
-	#endregion Generated Form Objects
-
-	#----------------------------------------------
-	# User Generated Script
-	#----------------------------------------------
-	
 function Show-COA_psf {
 
 	#----------------------------------------------
